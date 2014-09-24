@@ -1,0 +1,7 @@
+{
+  "name": "ffdonkey",
+  "description": "automates follow friday style tweets based on a list",
+  "repository": "https://github.com/dennisheaney/ffdonkey.git",
+  "logo": "http://dennisheaney.com/sites/all/themes/zenden-0.1.4/logo.png",
+  "keywords": ["node", "heroku", "twitter"]
+}

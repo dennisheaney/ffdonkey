@@ -1,0 +1,29 @@
+{
+  "name": "ffdonkey",
+  "version": "0.1.0",
+  "description": "automates follow friday style tweets based on a list",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "twit": "1.1.18"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dennisheaney/ffdonkey.git"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "twitter"
+  ],
+  "author": "Dennis Heaney",
+  "contributors": [
+    "Dennis Heaney <contact@dennisheaney.com> (http://www.dennisheaney.com)"
+  ],
+  "license": "MIT"
+}
