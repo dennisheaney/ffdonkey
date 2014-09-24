@@ -25,15 +25,18 @@ exports = module.exports = {
       list && list.forEach(function (user, index) {
         if (Math.floor(Math.random() * list.length) <= index) {
           // randomly ignore some users
-          continue;
+          return;
         }
         users.push('@' + user.screen_name);
       });
 
-      users.length && self.twit.post('status/update', { status: '#ff: ' + users.join(',') }, function (err) {
-        err && console.log(err);
-        console.log('follow friday done!');
-      });
+      if (users.length) {
+        var statusText = '#ff: ' + users.join(',');
+        self.twit.post('status/update', { status: statusText }, function (err) {
+          err && console.log(err);
+          console.log('follow friday done!');
+        });
+      }
     });
   },
 
