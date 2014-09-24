@@ -10,8 +10,8 @@ exports = module.exports = {
       access_token_secret:  process.env.TWIT_ACCESS_TOKEN_SECRET
     });
 
-    this.user = process.env.HEYA_USER;
-    this.list_slug = process.env.HEYA_LIST_SLUG;
+    this.user = process.env.DONKEY_USER;
+    this.list_slug = process.env.DONKEY_LIST_SLUG;
 
     // let's go
     setInterval(this.publishFriends.bind(this), process.env.TWIT_INTERVAL);
@@ -22,8 +22,12 @@ exports = module.exports = {
     this.fetchList(function (err, list) {
       err && console.log(err);
       var users = [];
-      list && list.forEach(function (user) {
-        users.push(user.screen_name);
+      list && list.forEach(function (user, index) {
+        if (Math.floor(Math.random() * list.length) <= index) {
+          // randomly ignore some users
+          continue;
+        }
+        users.push('@' + user.screen_name);
       });
 
       users.length && self.twit.post('status/update', { status: '#ff: ' + users.join(',') }, function (err) {
